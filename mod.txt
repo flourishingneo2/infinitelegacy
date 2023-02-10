@@ -1,0 +1,31 @@
+G.AddData ({
+  name: "LuckyBlock",
+  author: "flourishingneo",
+  desc: "Just adding Lucky Blocks,",
+  engineVersion : "1",
+  manifest: "",
+  requires: ["Default dataset*"],
+  sheets: {
+    "Luckyblocksheet" : "https://static.wikia.nocookie.net/nintendo/images/0/02/Question_Block_NSMB.png/revision/latest/scale-to-width-down/1000?cb=20151206055532&path-prefix=en"
+  },
+
+  func: function() {
+    //Adds random category to left panel
+    G.resCategories["lucky_block"] = {
+      name: "Lucky_Block",
+      base: [],
+      side: ["stable room"]
+    };
+
+    //Adds LuckyBox resource
+    new G.res({
+      name: "lucky_block",
+      desc: "You wanna open it?",
+      icon [0, 0, "Luckyblocksheet"],
+      partOf: "",
+      category : "animals",
+      displayUsed : true,
+      turntoByContext:{},
+    })
+  }
+})
